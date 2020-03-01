@@ -1328,5 +1328,130 @@
         "schemaPath": ["type"]
       }
     ]
+  },
+  "string type schema - null": {
+    "schema": { "type": "string" },
+    "instance": null,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "string type schema - boolean": {
+    "schema": { "type": "string" },
+    "instance": true,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "string type schema - integer": {
+    "schema": { "type": "string" },
+    "instance": 1,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "string type schema - float": {
+    "schema": { "type": "string" },
+    "instance": 3.14,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "string type schema - string": {
+    "schema": { "type": "string" },
+    "instance": "foo",
+    "errors": []
+  },
+  "string type schema - array": {
+    "schema": { "type": "string" },
+    "instance": [],
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "string type schema - object": {
+    "schema": { "type": "string" },
+    "instance": {},
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "nullable string type schema - null": {
+    "schema": { "type": "string", "nullable": true },
+    "instance": null,
+    "errors": []
+  },
+  "nullable string type schema - boolean": {
+    "schema": { "type": "string", "nullable": true },
+    "instance": true,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "nullable string type schema - integer": {
+    "schema": { "type": "string", "nullable": true },
+    "instance": 1,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "nullable string type schema - float": {
+    "schema": { "type": "string", "nullable": true },
+    "instance": 3.14,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "nullable string type schema - string": {
+    "schema": { "type": "string", "nullable": true },
+    "instance": "foo",
+    "errors": []
+  },
+  "nullable string type schema - array": {
+    "schema": { "type": "string", "nullable": true },
+    "instance": [],
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "nullable string type schema - object": {
+    "schema": { "type": "string", "nullable": true },
+    "instance": {},
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
   }
 }
