@@ -2613,5 +2613,120 @@
         "schemaPath": ["values", "values"]
       }
     ]
+  },
+  "discriminator schema - null": {
+    "schema": { "discriminator": "foo", "mapping": {} },
+    "instance": null,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["discriminator"]
+      }
+    ]
+  },
+  "discriminator schema - boolean": {
+    "schema": { "discriminator": "foo", "mapping": {} },
+    "instance": true,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["discriminator"]
+      }
+    ]
+  },
+  "discriminator schema - float": {
+    "schema": { "discriminator": "foo", "mapping": {} },
+    "instance": 3.14,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["discriminator"]
+      }
+    ]
+  },
+  "discriminator schema - integer": {
+    "schema": { "discriminator": "foo", "mapping": {} },
+    "instance": 1,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["discriminator"]
+      }
+    ]
+  },
+  "discriminator schema - string": {
+    "schema": { "discriminator": "foo", "mapping": {} },
+    "instance": "foo",
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["discriminator"]
+      }
+    ]
+  },
+  "discriminator schema - array": {
+    "schema": { "discriminator": "foo", "mapping": {} },
+    "instance": [],
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["discriminator"]
+      }
+    ]
+  },
+  "nullable discriminator schema - null": {
+    "schema": { "discriminator": "foo", "mapping": {}, "nullable": true },
+    "instance": null,
+    "errors": []
+  },
+  "nullable discriminator schema - boolean": {
+    "schema": { "discriminator": "foo", "mapping": {}, "nullable": true },
+    "instance": true,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["discriminator"]
+      }
+    ]
+  },
+  "nullable discriminator schema - float": {
+    "schema": { "discriminator": "foo", "mapping": {}, "nullable": true },
+    "instance": 3.14,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["discriminator"]
+      }
+    ]
+  },
+  "nullable discriminator schema - integer": {
+    "schema": { "discriminator": "foo", "mapping": {}, "nullable": true },
+    "instance": 1,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["discriminator"]
+      }
+    ]
+  },
+  "nullable discriminator schema - string": {
+    "schema": { "discriminator": "foo", "mapping": {}, "nullable": true },
+    "instance": "foo",
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["discriminator"]
+      }
+    ]
+  },
+  "nullable discriminator schema - array": {
+    "schema": { "discriminator": "foo", "mapping": {}, "nullable": true },
+    "instance": [],
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["discriminator"]
+      }
+    ]
   }
 }
