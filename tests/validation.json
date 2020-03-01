@@ -2595,7 +2595,7 @@
     "schema": { "values": { "values": { "type": "string" } } },
     "instance": {
       "a0": { "b0": null },
-      "a1": { "b0": null },
+      "a1": { "b0": {} },
       "a2": { "b0": "c", "b1": null },
       "a3": null
     },
