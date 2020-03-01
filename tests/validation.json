@@ -492,7 +492,12 @@
   "nullable int8 type schema - float": {
     "schema": { "type": "int8", "nullable": true },
     "instance": 3.14,
-    "errors": []
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
   },
   "nullable int8 type schema - string": {
     "schema": { "type": "int8", "nullable": true },
