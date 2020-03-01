@@ -2428,5 +2428,190 @@
         "schemaPath": ["properties"]
       }
     ]
+  },
+  "values schema - null": {
+    "schema": { "values": { "type": "string" } },
+    "instance": null,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["values"]
+      }
+    ]
+  },
+  "values schema - boolean": {
+    "schema": { "values": { "type": "string" } },
+    "instance": true,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["values"]
+      }
+    ]
+  },
+  "values schema - float": {
+    "schema": { "values": { "type": "string" } },
+    "instance": 3.14,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["values"]
+      }
+    ]
+  },
+  "values schema - integer": {
+    "schema": { "values": { "type": "string" } },
+    "instance": 1,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["values"]
+      }
+    ]
+  },
+  "values schema - string": {
+    "schema": { "values": { "type": "string" } },
+    "instance": "foo",
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["values"]
+      }
+    ]
+  },
+  "values schema - array": {
+    "schema": { "values": { "type": "string" } },
+    "instance": [],
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["values"]
+      }
+    ]
+  },
+  "nullable values schema - null": {
+    "schema": { "values": { "type": "string" }, "nullable": true },
+    "instance": null,
+    "errors": []
+  },
+  "nullable values schema - boolean": {
+    "schema": { "values": { "type": "string" }, "nullable": true },
+    "instance": true,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["values"]
+      }
+    ]
+  },
+  "nullable values schema - float": {
+    "schema": { "values": { "type": "string" }, "nullable": true },
+    "instance": 3.14,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["values"]
+      }
+    ]
+  },
+  "nullable values schema - integer": {
+    "schema": { "values": { "type": "string" }, "nullable": true },
+    "instance": 1,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["values"]
+      }
+    ]
+  },
+  "nullable values schema - string": {
+    "schema": { "values": { "type": "string" }, "nullable": true },
+    "instance": "foo",
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["values"]
+      }
+    ]
+  },
+  "nullable values schema - array": {
+    "schema": { "values": { "type": "string" }, "nullable": true },
+    "instance": [],
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["values"]
+      }
+    ]
+  },
+  "values schema - empty object": {
+    "schema": { "values": { "type": "string" } },
+    "instance": {},
+    "errors": []
+  },
+  "values schema - all values ok": {
+    "schema": { "values": { "type": "string" } },
+    "instance": { "foo": "foo", "bar": "bar", "baz": "baz" },
+    "errors": []
+  },
+  "values schema - some values bad": {
+    "schema": { "values": { "type": "string" } },
+    "instance": { "foo": "foo", "bar": 123, "baz": 123 },
+    "errors": [
+      {
+        "instancePath": ["bar"],
+        "schemaPath": ["values", "type"]
+      },
+      {
+        "instancePath": ["baz"],
+        "schemaPath": ["values", "type"]
+      }
+    ]
+  },
+  "values schema - all values bad": {
+    "schema": { "values": { "type": "string" } },
+    "instance": { "foo": 123, "bar": 123, "baz": 123 },
+    "errors": [
+      {
+        "instancePath": ["foo"],
+        "schemaPath": ["values", "type"]
+      },
+      {
+        "instancePath": ["bar"],
+        "schemaPath": ["values", "type"]
+      },
+      {
+        "instancePath": ["baz"],
+        "schemaPath": ["values", "type"]
+      }
+    ]
+  },
+  "values schema - nested values, ok": {
+    "schema": { "values": { "values": { "type": "string" } } },
+    "instance": { "a0": { "b0": "c" }, "a1": {}, "a2": { "b0": "c" } },
+    "errors": []
+  },
+  "values schema - nested values, bad": {
+    "schema": { "values": { "values": { "type": "string" } } },
+    "instance": {
+      "a0": { "b0": null },
+      "a1": { "b0": null },
+      "a2": { "b0": "c", "b1": null },
+      "a3": null
+    },
+    "errors": [
+      {
+        "instancePath": ["a0", "b0"],
+        "schemaPath": ["values", "values", "type"]
+      },
+      {
+        "instancePath": ["a2", "b1"],
+        "schemaPath": ["values", "values", "type"]
+      },
+      {
+        "instancePath": ["a3"],
+        "schemaPath": ["values", "values"]
+      }
+    ]
   }
 }
