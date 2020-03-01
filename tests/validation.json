@@ -123,6 +123,39 @@
     "instance": null,
     "errors": []
   },
+  "ref schema - recursive schema, ok": {
+    "schema": {
+      "definitions": {
+        "root": {
+          "elements": {
+            "ref": "root"
+          }
+        }
+      },
+      "ref": "root"
+    },
+    "instance": [],
+    "errors": []
+  },
+  "ref schema - recursive schema, bad": {
+    "schema": {
+      "definitions": {
+        "root": {
+          "elements": {
+            "ref": "root"
+          }
+        }
+      },
+      "ref": "root"
+    },
+    "instance": [[], [[]], [[[], ["a"]]]],
+    "errors": [
+      {
+        "instancePath": ["2", "0", "1", "0"],
+        "schemaPath": ["definitions", "root", "elements"]
+      }
+    ]
+  },
   "boolean type schema - null": {
     "schema": { "type": "boolean" },
     "instance": null,
