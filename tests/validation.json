@@ -2219,10 +2219,26 @@
       }
     ]
   },
-  "non-strict properties - ok": {
+  "strict properties - bad additional property with explicit additionalProperties: false": {
     "schema": {
       "properties": { "foo": { "type": "string" } },
       "additionalProperties": false
+    },
+    "instance": {
+      "foo": "foo",
+      "bar": "bar"
+    },
+    "errors": [
+      {
+        "instancePath": ["bar"],
+        "schemaPath": ["properties"]
+      }
+    ]
+  },
+  "non-strict properties - ok": {
+    "schema": {
+      "properties": { "foo": { "type": "string" } },
+      "additionalProperties": true
     },
     "instance": {
       "foo": "foo"
@@ -2232,7 +2248,7 @@
   "non-strict properties - bad wrong type": {
     "schema": {
       "properties": { "foo": { "type": "string" } },
-      "additionalProperties": false
+      "additionalProperties": true
     },
     "instance": {
       "foo": 123
@@ -2247,7 +2263,7 @@
   "non-strict properties - bad missing property": {
     "schema": {
       "properties": { "foo": { "type": "string" } },
-      "additionalProperties": false
+      "additionalProperties": true
     },
     "instance": {},
     "errors": [
@@ -2260,7 +2276,7 @@
   "non-strict properties - ok additional property": {
     "schema": {
       "properties": { "foo": { "type": "string" } },
-      "additionalProperties": false
+      "additionalProperties": true
     },
     "instance": {
       "foo": "foo",
@@ -2305,10 +2321,26 @@
       }
     ]
   },
-  "non-strict optionalProperties - ok": {
+  "strict optionalProperties - bad additional property with explicit additionalProperties: false": {
     "schema": {
       "optionalProperties": { "foo": { "type": "string" } },
       "additionalProperties": false
+    },
+    "instance": {
+      "foo": "foo",
+      "bar": "bar"
+    },
+    "errors": [
+      {
+        "instancePath": ["bar"],
+        "schemaPath": ["optionalProperties"]
+      }
+    ]
+  },
+  "non-strict optionalProperties - ok": {
+    "schema": {
+      "optionalProperties": { "foo": { "type": "string" } },
+      "additionalProperties": true
     },
     "instance": {
       "foo": "foo"
@@ -2318,7 +2350,7 @@
   "non-strict optionalProperties - bad wrong type": {
     "schema": {
       "optionalProperties": { "foo": { "type": "string" } },
-      "additionalProperties": false
+      "additionalProperties": true
     },
     "instance": {
       "foo": 123
@@ -2333,7 +2365,7 @@
   "non-strict optionalProperties - ok missing property": {
     "schema": {
       "optionalProperties": { "foo": { "type": "string" } },
-      "additionalProperties": false
+      "additionalProperties": true
     },
     "instance": {},
     "errors": []
@@ -2341,7 +2373,7 @@
   "non-strict optionalProperties - ok additional property": {
     "schema": {
       "optionalProperties": { "foo": { "type": "string" } },
-      "additionalProperties": false
+      "additionalProperties": true
     },
     "instance": {
       "foo": "foo",
