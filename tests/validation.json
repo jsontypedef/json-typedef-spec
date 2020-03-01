@@ -398,5 +398,140 @@
         "schemaPath": ["type"]
       }
     ]
+  },
+  "int8 type schema - null": {
+    "schema": { "type": "int8" },
+    "instance": null,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "int8 type schema - boolean": {
+    "schema": { "type": "int8" },
+    "instance": true,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "int8 type schema - integer": {
+    "schema": { "type": "int8" },
+    "instance": 1,
+    "errors": []
+  },
+  "int8 type schema - float": {
+    "schema": { "type": "int8" },
+    "instance": 3.14,
+    "errors": []
+  },
+  "int8 type schema - string": {
+    "schema": { "type": "int8" },
+    "instance": "foo",
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "int8 type schema - array": {
+    "schema": { "type": "int8" },
+    "instance": [],
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "int8 type schema - object": {
+    "schema": { "type": "int8" },
+    "instance": {},
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "nullable int8 type schema - null": {
+    "schema": { "type": "int8", "nullable": true },
+    "instance": null,
+    "errors": []
+  },
+  "nullable int8 type schema - boolean": {
+    "schema": { "type": "int8", "nullable": true },
+    "instance": true,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "nullable int8 type schema - integer": {
+    "schema": { "type": "int8", "nullable": true },
+    "instance": 1,
+    "errors": []
+  },
+  "nullable int8 type schema - float": {
+    "schema": { "type": "int8", "nullable": true },
+    "instance": 3.14,
+    "errors": []
+  },
+  "nullable int8 type schema - string": {
+    "schema": { "type": "int8", "nullable": true },
+    "instance": "foo",
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "nullable int8 type schema - array": {
+    "schema": { "type": "int8", "nullable": true },
+    "instance": [],
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "nullable int8 type schema - object": {
+    "schema": { "type": "int8", "nullable": true },
+    "instance": {},
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "int8 type schema - min value": {
+    "schema": { "type": "int8" },
+    "instance": -128,
+    "errors": []
+  },
+  "int8 type schema - max value": {
+    "schema": { "type": "int8" },
+    "instance": 127,
+    "errors": []
+  },
+  "int8 type schema - less than min": {
+    "schema": { "type": "int8" },
+    "instance": -129,
+    "errors": []
+  },
+  "int8 type schema - more than max": {
+    "schema": { "type": "int8" },
+    "instance": 128,
+    "errors": []
   }
 }
