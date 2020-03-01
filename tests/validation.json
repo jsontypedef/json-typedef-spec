@@ -1453,5 +1453,165 @@
         "schemaPath": ["type"]
       }
     ]
+  },
+  "timestamp type schema - null": {
+    "schema": { "type": "timestamp" },
+    "instance": null,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "timestamp type schema - boolean": {
+    "schema": { "type": "timestamp" },
+    "instance": true,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "timestamp type schema - integer": {
+    "schema": { "type": "timestamp" },
+    "instance": 1,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "timestamp type schema - float": {
+    "schema": { "type": "timestamp" },
+    "instance": 3.14,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "timestamp type schema - string": {
+    "schema": { "type": "timestamp" },
+    "instance": "foo",
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "timestamp type schema - array": {
+    "schema": { "type": "timestamp" },
+    "instance": [],
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "timestamp type schema - object": {
+    "schema": { "type": "timestamp" },
+    "instance": {},
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "nullable timestamp type schema - null": {
+    "schema": { "type": "timestamp", "nullable": true },
+    "instance": null,
+    "errors": []
+  },
+  "nullable timestamp type schema - boolean": {
+    "schema": { "type": "timestamp", "nullable": true },
+    "instance": true,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "nullable timestamp type schema - integer": {
+    "schema": { "type": "timestamp", "nullable": true },
+    "instance": 1,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "nullable timestamp type schema - float": {
+    "schema": { "type": "timestamp", "nullable": true },
+    "instance": 3.14,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "nullable timestamp type schema - string": {
+    "schema": { "type": "timestamp", "nullable": true },
+    "instance": "foo",
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "nullable timestamp type schema - array": {
+    "schema": { "type": "timestamp", "nullable": true },
+    "instance": [],
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "nullable timestamp type schema - object": {
+    "schema": { "type": "timestamp", "nullable": true },
+    "instance": {},
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "timestamp type schema - 1985-04-12T23:20:50.52Z": {
+    "schema": { "type": "timestamp" },
+    "instance": "1985-04-12T23:20:50.52Z",
+    "errors": []
+  },
+  "timestamp type schema - 1996-12-19T16:39:57-08:00": {
+    "schema": { "type": "timestamp" },
+    "instance": "1996-12-19T16:39:57-08:00",
+    "errors": []
+  },
+  "timestamp type schema - 1990-12-31T23:59:60Z": {
+    "schema": { "type": "timestamp" },
+    "instance": "1990-12-31T23:59:60Z",
+    "errors": []
+  },
+  "timestamp type schema - 1990-12-31T15:59:60-08:00": {
+    "schema": { "type": "timestamp" },
+    "instance": "1990-12-31T15:59:60-08:00",
+    "errors": []
+  },
+  "timestamp type schema - 1937-01-01T12:00:27.87+00:20": {
+    "schema": { "type": "timestamp" },
+    "instance": "1937-01-01T12:00:27.87+00:20",
+    "errors": []
   }
 }
