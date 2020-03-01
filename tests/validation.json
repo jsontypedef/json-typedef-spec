@@ -1869,7 +1869,7 @@
       },
       {
         "instancePath": ["3"],
-        "schemaPath": ["elements", "type"]
+        "schemaPath": ["elements", "elements"]
       }
     ]
   }
