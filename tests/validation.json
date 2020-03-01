@@ -708,5 +708,315 @@
         "schemaPath": ["type"]
       }
     ]
+  },
+  "int16 type schema - null": {
+    "schema": { "type": "int16" },
+    "instance": null,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "int16 type schema - boolean": {
+    "schema": { "type": "int16" },
+    "instance": true,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "int16 type schema - integer": {
+    "schema": { "type": "int16" },
+    "instance": 1,
+    "errors": []
+  },
+  "int16 type schema - float": {
+    "schema": { "type": "int16" },
+    "instance": 3.14,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "int16 type schema - string": {
+    "schema": { "type": "int16" },
+    "instance": "foo",
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "int16 type schema - array": {
+    "schema": { "type": "int16" },
+    "instance": [],
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "int16 type schema - object": {
+    "schema": { "type": "int16" },
+    "instance": {},
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "nullable int16 type schema - null": {
+    "schema": { "type": "int16", "nullable": true },
+    "instance": null,
+    "errors": []
+  },
+  "nullable int16 type schema - boolean": {
+    "schema": { "type": "int16", "nullable": true },
+    "instance": true,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "nullable int16 type schema - integer": {
+    "schema": { "type": "int16", "nullable": true },
+    "instance": 1,
+    "errors": []
+  },
+  "nullable int16 type schema - float": {
+    "schema": { "type": "int16", "nullable": true },
+    "instance": 3.14,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "nullable int16 type schema - string": {
+    "schema": { "type": "int16", "nullable": true },
+    "instance": "foo",
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "nullable int16 type schema - array": {
+    "schema": { "type": "int16", "nullable": true },
+    "instance": [],
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "nullable int16 type schema - object": {
+    "schema": { "type": "int16", "nullable": true },
+    "instance": {},
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "int16 type schema - min value": {
+    "schema": { "type": "int16" },
+    "instance": -32768,
+    "errors": []
+  },
+  "int16 type schema - max value": {
+    "schema": { "type": "int16" },
+    "instance": 32767,
+    "errors": []
+  },
+  "int16 type schema - less than min": {
+    "schema": { "type": "int16" },
+    "instance": -32769,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "int16 type schema - more than max": {
+    "schema": { "type": "int16" },
+    "instance": 32768,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "uint16 type schema - null": {
+    "schema": { "type": "uint16" },
+    "instance": null,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "uint16 type schema - boolean": {
+    "schema": { "type": "uint16" },
+    "instance": true,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "uint16 type schema - integer": {
+    "schema": { "type": "uint16" },
+    "instance": 1,
+    "errors": []
+  },
+  "uint16 type schema - float": {
+    "schema": { "type": "uint16" },
+    "instance": 3.14,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "uint16 type schema - string": {
+    "schema": { "type": "uint16" },
+    "instance": "foo",
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "uint16 type schema - array": {
+    "schema": { "type": "uint16" },
+    "instance": [],
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "uint16 type schema - object": {
+    "schema": { "type": "uint16" },
+    "instance": {},
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "nullable uint16 type schema - null": {
+    "schema": { "type": "uint16", "nullable": true },
+    "instance": null,
+    "errors": []
+  },
+  "nullable uint16 type schema - boolean": {
+    "schema": { "type": "uint16", "nullable": true },
+    "instance": true,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "nullable uint16 type schema - integer": {
+    "schema": { "type": "uint16", "nullable": true },
+    "instance": 1,
+    "errors": []
+  },
+  "nullable uint16 type schema - float": {
+    "schema": { "type": "uint16", "nullable": true },
+    "instance": 3.14,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "nullable uint16 type schema - string": {
+    "schema": { "type": "uint16", "nullable": true },
+    "instance": "foo",
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "nullable uint16 type schema - array": {
+    "schema": { "type": "uint16", "nullable": true },
+    "instance": [],
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "nullable uint16 type schema - object": {
+    "schema": { "type": "uint16", "nullable": true },
+    "instance": {},
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "uint16 type schema - min value": {
+    "schema": { "type": "uint16" },
+    "instance": 0,
+    "errors": []
+  },
+  "uint16 type schema - max value": {
+    "schema": { "type": "uint16" },
+    "instance": 65535,
+    "errors": []
+  },
+  "uint16 type schema - less than min": {
+    "schema": { "type": "uint16" },
+    "instance": -1,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "uint16 type schema - more than max": {
+    "schema": { "type": "uint16" },
+    "instance": 65536,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
   }
 }
