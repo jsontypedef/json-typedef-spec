@@ -54,6 +54,17 @@
     "instance": true,
     "errors": []
   },
+  "ref schema - nested ref": {
+    "schema": {
+      "definitions": {
+        "foo": { "ref": "bar" },
+        "bar": {}
+      },
+      "ref": "foo"
+    },
+    "instance": true,
+    "errors": []
+  },
   "ref schema - ref to type definition, ok": {
     "schema": {
       "definitions": {
