@@ -168,5 +168,125 @@
         "schemaPath": ["type"]
       }
     ]
+  },
+  "float32 type schema - null": {
+    "schema": { "type": "float32" },
+    "instance": null,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "float32 type schema - boolean": {
+    "schema": { "type": "float32" },
+    "instance": true,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "float32 type schema - integer": {
+    "schema": { "type": "float32" },
+    "instance": 1,
+    "errors": []
+  },
+  "float32 type schema - float": {
+    "schema": { "type": "float32" },
+    "instance": 3.14,
+    "errors": []
+  },
+  "float32 type schema - string": {
+    "schema": { "type": "float32" },
+    "instance": "foo",
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "float32 type schema - array": {
+    "schema": { "type": "float32" },
+    "instance": [],
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "float32 type schema - object": {
+    "schema": { "type": "float32" },
+    "instance": {},
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "nullable float32 type schema - null": {
+    "schema": { "type": "float32", "nullable": true },
+    "instance": null,
+    "errors": []
+  },
+  "nullable float32 type schema - boolean": {
+    "schema": { "type": "float32", "nullable": true },
+    "instance": true,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "nullable float32 type schema - integer": {
+    "schema": { "type": "float32", "nullable": true },
+    "instance": 1,
+    "errors": []
+  },
+  "nullable float32 type schema - float": {
+    "schema": { "type": "float32", "nullable": true },
+    "instance": 3.14,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "nullable float32 type schema - string": {
+    "schema": { "type": "float32", "nullable": true },
+    "instance": "foo",
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "nullable float32 type schema - array": {
+    "schema": { "type": "float32", "nullable": true },
+    "instance": [],
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "nullable float32 type schema - object": {
+    "schema": { "type": "float32", "nullable": true },
+    "instance": {},
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
   }
 }
