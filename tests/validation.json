@@ -1692,5 +1692,185 @@
     "schema": { "type": "timestamp" },
     "instance": "1937-01-01T12:00:27.87+00:20",
     "errors": []
+  },
+  "elements schema - null": {
+    "schema": { "elements": { "type": "string" } },
+    "instance": null,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["elements"]
+      }
+    ]
+  },
+  "elements schema - boolean": {
+    "schema": { "elements": { "type": "string" } },
+    "instance": true,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["elements"]
+      }
+    ]
+  },
+  "elements schema - float": {
+    "schema": { "elements": { "type": "string" } },
+    "instance": 3.14,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["elements"]
+      }
+    ]
+  },
+  "elements schema - integer": {
+    "schema": { "elements": { "type": "string" } },
+    "instance": 1,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["elements"]
+      }
+    ]
+  },
+  "elements schema - string": {
+    "schema": { "elements": { "type": "string" } },
+    "instance": "foo",
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["elements"]
+      }
+    ]
+  },
+  "elements schema - object": {
+    "schema": { "elements": { "type": "string" } },
+    "instance": {},
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["elements"]
+      }
+    ]
+  },
+  "nullable elements schema - null": {
+    "schema": { "elements": { "type": "string" }, "nullable": true },
+    "instance": null,
+    "errors": []
+  },
+  "nullable elements schema - boolean": {
+    "schema": { "elements": { "type": "string" }, "nullable": true },
+    "instance": true,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["elements"]
+      }
+    ]
+  },
+  "nullable elements schema - float": {
+    "schema": { "elements": { "type": "string" }, "nullable": true },
+    "instance": 3.14,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["elements"]
+      }
+    ]
+  },
+  "nullable elements schema - integer": {
+    "schema": { "elements": { "type": "string" }, "nullable": true },
+    "instance": 1,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["elements"]
+      }
+    ]
+  },
+  "nullable elements schema - string": {
+    "schema": { "elements": { "type": "string" }, "nullable": true },
+    "instance": "foo",
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["elements"]
+      }
+    ]
+  },
+  "nullable elements schema - object": {
+    "schema": { "elements": { "type": "string" }, "nullable": true },
+    "instance": {},
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["elements"]
+      }
+    ]
+  },
+  "elements schema - empty array": {
+    "schema": { "elements": { "type": "string" } },
+    "instance": [],
+    "errors": []
+  },
+  "elements schema - all values ok": {
+    "schema": { "elements": { "type": "string" } },
+    "instance": ["foo", "bar", "baz"],
+    "errors": []
+  },
+  "elements schema - some values bad": {
+    "schema": { "elements": { "type": "string" } },
+    "instance": ["foo", null, null],
+    "errors": [
+      {
+        "instancePath": ["1"],
+        "schemaPath": ["elements", "type"]
+      },
+      {
+        "instancePath": ["2"],
+        "schemaPath": ["elements", "type"]
+      }
+    ]
+  },
+  "elements schema - all values bad": {
+    "schema": { "elements": { "type": "string" } },
+    "instance": [null, null, null],
+    "errors": [
+      {
+        "instancePath": ["0"],
+        "schemaPath": ["elements", "type"]
+      },
+      {
+        "instancePath": ["1"],
+        "schemaPath": ["elements", "type"]
+      },
+      {
+        "instancePath": ["2"],
+        "schemaPath": ["elements", "type"]
+      }
+    ]
+  },
+  "elements schema - nested elements, ok": {
+    "schema": { "elements": { "elements": { "type": "string" } } },
+    "instance": [[], ["foo"], ["foo", "bar", "baz"]],
+    "errors": []
+  },
+  "elements schema - nested elements, bad": {
+    "schema": { "elements": { "elements": { "type": "string" } } },
+    "instance": [[null], ["foo"], ["foo", null, "baz"], null],
+    "errors": [
+      {
+        "instancePath": ["0", "0"],
+        "schemaPath": ["elements", "elements", "type"]
+      },
+      {
+        "instancePath": ["2", "1"],
+        "schemaPath": ["elements", "elements", "type"]
+      },
+      {
+        "instancePath": ["3"],
+        "schemaPath": ["elements", "type"]
+      }
+    ]
   }
 }
