@@ -2167,9 +2167,9 @@
       }
     ]
   },
-  "optionalProperties schema - object": {
+  "optionalProperties schema - array": {
     "schema": { "optionalProperties": { "foo": { "type": "string" } } },
-    "instance": {},
+    "instance": [],
     "errors": [
       {
         "instancePath": [],
