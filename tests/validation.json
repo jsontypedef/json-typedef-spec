@@ -90,6 +90,39 @@
       }
     ]
   },
+  "nullable ref schema - ref to type definition, ok": {
+    "schema": {
+      "definitions": {
+        "foo": { "type": "boolean" }
+      },
+      "ref": "foo",
+      "nullable": true
+    },
+    "instance": true,
+    "errors": []
+  },
+  "nullable ref schema - ref to type definition, ok because null": {
+    "schema": {
+      "definitions": {
+        "foo": { "type": "boolean" }
+      },
+      "ref": "foo",
+      "nullable": true
+    },
+    "instance": null,
+    "errors": []
+  },
+  "nullable ref schema - nullable: false ignored": {
+    "schema": {
+      "definitions": {
+        "foo": { "type": "boolean", "nullable": false }
+      },
+      "ref": "foo",
+      "nullable": true
+    },
+    "instance": null,
+    "errors": []
+  },
   "boolean type schema - null": {
     "schema": { "type": "boolean" },
     "instance": null,
