@@ -1905,5 +1905,276 @@
         "schemaPath": ["elements", "elements"]
       }
     ]
+  },
+  "properties schema - null": {
+    "schema": { "properties": { "foo": { "type": "string" } } },
+    "instance": null,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["properties"]
+      }
+    ]
+  },
+  "properties schema - boolean": {
+    "schema": { "properties": { "foo": { "type": "string" } } },
+    "instance": true,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["properties"]
+      }
+    ]
+  },
+  "properties schema - float": {
+    "schema": { "properties": { "foo": { "type": "string" } } },
+    "instance": 3.14,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["properties"]
+      }
+    ]
+  },
+  "properties schema - integer": {
+    "schema": { "properties": { "foo": { "type": "string" } } },
+    "instance": 1,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["properties"]
+      }
+    ]
+  },
+  "properties schema - string": {
+    "schema": { "properties": { "foo": { "type": "string" } } },
+    "instance": "foo",
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["properties"]
+      }
+    ]
+  },
+  "properties schema - array": {
+    "schema": { "properties": { "foo": { "type": "string" } } },
+    "instance": [],
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["properties"]
+      }
+    ]
+  },
+  "nullable properties schema - null": {
+    "schema": {
+      "properties": { "foo": { "type": "string" } },
+      "nullable": true
+    },
+    "instance": null,
+    "errors": []
+  },
+  "nullable properties schema - boolean": {
+    "schema": {
+      "properties": { "foo": { "type": "string" } },
+      "nullable": true
+    },
+    "instance": true,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["properties"]
+      }
+    ]
+  },
+  "nullable properties schema - float": {
+    "schema": {
+      "properties": { "foo": { "type": "string" } },
+      "nullable": true
+    },
+    "instance": 3.14,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["properties"]
+      }
+    ]
+  },
+  "nullable properties schema - integer": {
+    "schema": {
+      "properties": { "foo": { "type": "string" } },
+      "nullable": true
+    },
+    "instance": 1,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["properties"]
+      }
+    ]
+  },
+  "nullable properties schema - string": {
+    "schema": {
+      "properties": { "foo": { "type": "string" } },
+      "nullable": true
+    },
+    "instance": "foo",
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["properties"]
+      }
+    ]
+  },
+  "nullable properties schema - array": {
+    "schema": {
+      "properties": { "foo": { "type": "string" } },
+      "nullable": true
+    },
+    "instance": [],
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["properties"]
+      }
+    ]
+  },
+  "properties and optionalProperties schema - null": {
+    "schema": {
+      "properties": { "foo": { "type": "string" } },
+      "optionalProperties": { "bar": { "type": "string" } }
+    },
+    "instance": null,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["properties"]
+      }
+    ]
+  },
+  "properties and optionalProperties schema - boolean": {
+    "schema": {
+      "properties": { "foo": { "type": "string" } },
+      "optionalProperties": { "bar": { "type": "string" } }
+    },
+    "instance": true,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["properties"]
+      }
+    ]
+  },
+  "properties and optionalProperties schema - float": {
+    "schema": {
+      "properties": { "foo": { "type": "string" } },
+      "optionalProperties": { "bar": { "type": "string" } }
+    },
+    "instance": 3.14,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["properties"]
+      }
+    ]
+  },
+  "properties and optionalProperties schema - integer": {
+    "schema": {
+      "properties": { "foo": { "type": "string" } },
+      "optionalProperties": { "bar": { "type": "string" } }
+    },
+    "instance": 1,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["properties"]
+      }
+    ]
+  },
+  "properties and optionalProperties schema - string": {
+    "schema": {
+      "properties": { "foo": { "type": "string" } },
+      "optionalProperties": { "bar": { "type": "string" } }
+    },
+    "instance": "foo",
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["properties"]
+      }
+    ]
+  },
+  "properties and optionalProperties schema - array": {
+    "schema": {
+      "properties": { "foo": { "type": "string" } },
+      "optionalProperties": { "bar": { "type": "string" } }
+    },
+    "instance": [],
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["properties"]
+      }
+    ]
+  },
+  "optionalProperties schema - null": {
+    "schema": { "optionalProperties": { "foo": { "type": "string" } } },
+    "instance": null,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["optionalProperties"]
+      }
+    ]
+  },
+  "optionalProperties schema - boolean": {
+    "schema": { "optionalProperties": { "foo": { "type": "string" } } },
+    "instance": true,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["optionalProperties"]
+      }
+    ]
+  },
+  "optionalProperties schema - float": {
+    "schema": { "optionalProperties": { "foo": { "type": "string" } } },
+    "instance": 3.14,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["optionalProperties"]
+      }
+    ]
+  },
+  "optionalProperties schema - integer": {
+    "schema": { "optionalProperties": { "foo": { "type": "string" } } },
+    "instance": 1,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["optionalProperties"]
+      }
+    ]
+  },
+  "optionalProperties schema - string": {
+    "schema": { "optionalProperties": { "foo": { "type": "string" } } },
+    "instance": "foo",
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["optionalProperties"]
+      }
+    ]
+  },
+  "optionalProperties schema - object": {
+    "schema": { "optionalProperties": { "foo": { "type": "string" } } },
+    "instance": {},
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["optionalProperties"]
+      }
+    ]
   }
 }
