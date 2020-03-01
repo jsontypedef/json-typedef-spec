@@ -252,12 +252,7 @@
   "nullable float32 type schema - float": {
     "schema": { "type": "float32", "nullable": true },
     "instance": 3.14,
-    "errors": [
-      {
-        "instancePath": [],
-        "schemaPath": ["type"]
-      }
-    ]
+    "errors": []
   },
   "nullable float32 type schema - string": {
     "schema": { "type": "float32", "nullable": true },
