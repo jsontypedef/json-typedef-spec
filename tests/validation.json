@@ -2380,5 +2380,53 @@
       "bar": "bar"
     },
     "errors": []
+  },
+  "strict mixed properties and optionalProperties - ok": {
+    "schema": {
+      "properties": { "foo": { "type": "string" } },
+      "optionalProperties": { "bar": { "type": "string" } }
+    },
+    "instance": {
+      "foo": "foo",
+      "bar": "bar"
+    },
+    "errors": []
+  },
+  "strict mixed properties and optionalProperties - bad": {
+    "schema": {
+      "properties": { "foo": { "type": "string" } },
+      "optionalProperties": { "bar": { "type": "string" } }
+    },
+    "instance": {
+      "foo": 123,
+      "bar": 123
+    },
+    "errors": [
+      {
+        "instancePath": ["foo"],
+        "schemaPath": ["properties", "foo", "type"]
+      },
+      {
+        "instancePath": ["bar"],
+        "schemaPath": ["optionalProperties", "bar", "type"]
+      }
+    ]
+  },
+  "strict mixed properties and optionalProperties - bad additional property": {
+    "schema": {
+      "properties": { "foo": { "type": "string" } },
+      "optionalProperties": { "bar": { "type": "string" } }
+    },
+    "instance": {
+      "foo": "foo",
+      "bar": "bar",
+      "baz": "baz"
+    },
+    "errors": [
+      {
+        "instancePath": ["baz"],
+        "schemaPath": ["properties"]
+      }
+    ]
   }
 }
