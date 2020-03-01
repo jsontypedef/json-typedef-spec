@@ -44,6 +44,41 @@
     "instance": {},
     "errors": []
   },
+  "ref schema - ref to empty definition": {
+    "schema": {
+      "definitions": {
+        "foo": {}
+      },
+      "ref": "foo"
+    },
+    "instance": true,
+    "errors": []
+  },
+  "ref schema - ref to type definition, ok": {
+    "schema": {
+      "definitions": {
+        "foo": { "type": "boolean" }
+      },
+      "ref": "foo"
+    },
+    "instance": true,
+    "errors": []
+  },
+  "ref schema - ref to type definition, fail": {
+    "schema": {
+      "definitions": {
+        "foo": { "type": "boolean" }
+      },
+      "ref": "foo"
+    },
+    "instance": {},
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["definitions", "foo", "type"]
+      }
+    ]
+  },
   "boolean type schema - null": {
     "schema": { "type": "boolean" },
     "instance": null,
