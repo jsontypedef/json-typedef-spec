@@ -1,0 +1,7 @@
+{
+  "empty schema - null": {
+    "schema": {},
+    "instance": null,
+    "errors": []
+  }
+}
