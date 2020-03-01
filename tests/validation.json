@@ -3,5 +3,110 @@
     "schema": {},
     "instance": null,
     "errors": []
+  },
+  "empty schema - boolean": {
+    "schema": {},
+    "instance": true,
+    "errors": []
+  },
+  "empty schema - integer": {
+    "schema": {},
+    "instance": 1,
+    "errors": []
+  },
+  "empty schema - float": {
+    "schema": {},
+    "instance": 3.14,
+    "errors": []
+  },
+  "empty schema - string": {
+    "schema": {},
+    "instance": "foo",
+    "errors": []
+  },
+  "empty schema - array": {
+    "schema": {},
+    "instance": [],
+    "errors": []
+  },
+  "empty schema - object": {
+    "schema": {},
+    "instance": {},
+    "errors": []
+  },
+  "empty nullable schema - null": {
+    "schema": { "nullable": true },
+    "instance": null,
+    "errors": []
+  },
+  "empty nullable schema - object": {
+    "schema": { "nullable": true },
+    "instance": {},
+    "errors": []
+  },
+  "boolean type schema - null": {
+    "schema": { "type": "boolean" },
+    "instance": null,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "boolean type schema - boolean": {
+    "schema": { "type": "boolean" },
+    "instance": true,
+    "errors": []
+  },
+  "boolean type schema - integer": {
+    "schema": { "type": "boolean" },
+    "instance": 1,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "boolean type schema - float": {
+    "schema": { "type": "boolean" },
+    "instance": 3.14,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "boolean type schema - string": {
+    "schema": { "type": "boolean" },
+    "instance": "foo",
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "boolean type schema - array": {
+    "schema": { "type": "boolean" },
+    "instance": [],
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "boolean type schema - object": {
+    "schema": { "type": "boolean" },
+    "instance": {},
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
   }
 }
