@@ -108,5 +108,65 @@
         "schemaPath": ["type"]
       }
     ]
+  },
+  "nullable boolean type schema - null": {
+    "schema": { "type": "boolean", "nullable": true },
+    "instance": null,
+    "errors": []
+  },
+  "nullable boolean type schema - boolean": {
+    "schema": { "type": "boolean", "nullable": true },
+    "instance": true,
+    "errors": []
+  },
+  "nullable boolean type schema - integer": {
+    "schema": { "type": "boolean", "nullable": true },
+    "instance": 1,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "nullable boolean type schema - float": {
+    "schema": { "type": "boolean", "nullable": true },
+    "instance": 3.14,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "nullable boolean type schema - string": {
+    "schema": { "type": "boolean", "nullable": true },
+    "instance": "foo",
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "nullable boolean type schema - array": {
+    "schema": { "type": "boolean", "nullable": true },
+    "instance": [],
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
+  },
+  "nullable boolean type schema - object": {
+    "schema": { "type": "boolean", "nullable": true },
+    "instance": {},
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
   }
 }
