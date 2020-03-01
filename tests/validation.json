@@ -527,11 +527,21 @@
   "int8 type schema - less than min": {
     "schema": { "type": "int8" },
     "instance": -129,
-    "errors": []
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
   },
   "int8 type schema - more than max": {
     "schema": { "type": "int8" },
     "instance": 128,
-    "errors": []
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["type"]
+      }
+    ]
   }
 }
