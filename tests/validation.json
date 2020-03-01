@@ -2176,5 +2176,177 @@
         "schemaPath": ["optionalProperties"]
       }
     ]
+  },
+  "strict properties - ok": {
+    "schema": { "properties": { "foo": { "type": "string" } } },
+    "instance": {
+      "foo": "foo"
+    },
+    "errors": []
+  },
+  "strict properties - bad wrong type": {
+    "schema": { "properties": { "foo": { "type": "string" } } },
+    "instance": {
+      "foo": 123
+    },
+    "errors": [
+      {
+        "instancePath": ["foo"],
+        "schemaPath": ["properties", "foo", "type"]
+      }
+    ]
+  },
+  "strict properties - bad missing property": {
+    "schema": { "properties": { "foo": { "type": "string" } } },
+    "instance": {},
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["properties"]
+      }
+    ]
+  },
+  "strict properties - bad additional property": {
+    "schema": { "properties": { "foo": { "type": "string" } } },
+    "instance": {
+      "foo": "foo",
+      "bar": "bar"
+    },
+    "errors": [
+      {
+        "instancePath": ["bar"],
+        "schemaPath": ["properties"]
+      }
+    ]
+  },
+  "non-strict properties - ok": {
+    "schema": {
+      "properties": { "foo": { "type": "string" } },
+      "additionalProperties": false
+    },
+    "instance": {
+      "foo": "foo"
+    },
+    "errors": []
+  },
+  "non-strict properties - bad wrong type": {
+    "schema": {
+      "properties": { "foo": { "type": "string" } },
+      "additionalProperties": false
+    },
+    "instance": {
+      "foo": 123
+    },
+    "errors": [
+      {
+        "instancePath": ["foo"],
+        "schemaPath": ["properties", "foo", "type"]
+      }
+    ]
+  },
+  "non-strict properties - bad missing property": {
+    "schema": {
+      "properties": { "foo": { "type": "string" } },
+      "additionalProperties": false
+    },
+    "instance": {},
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["properties"]
+      }
+    ]
+  },
+  "non-strict properties - ok additional property": {
+    "schema": {
+      "properties": { "foo": { "type": "string" } },
+      "additionalProperties": false
+    },
+    "instance": {
+      "foo": "foo",
+      "bar": "bar"
+    },
+    "errors": []
+  },
+  "strict optionalProperties - ok": {
+    "schema": { "optionalProperties": { "foo": { "type": "string" } } },
+    "instance": {
+      "foo": "foo"
+    },
+    "errors": []
+  },
+  "strict optionalProperties - bad wrong type": {
+    "schema": { "optionalProperties": { "foo": { "type": "string" } } },
+    "instance": {
+      "foo": 123
+    },
+    "errors": [
+      {
+        "instancePath": ["foo"],
+        "schemaPath": ["optionalProperties", "foo", "type"]
+      }
+    ]
+  },
+  "strict optionalProperties - ok missing property": {
+    "schema": { "optionalProperties": { "foo": { "type": "string" } } },
+    "instance": {},
+    "errors": []
+  },
+  "strict optionalProperties - bad additional property": {
+    "schema": { "optionalProperties": { "foo": { "type": "string" } } },
+    "instance": {
+      "foo": "foo",
+      "bar": "bar"
+    },
+    "errors": [
+      {
+        "instancePath": ["bar"],
+        "schemaPath": ["optionalProperties"]
+      }
+    ]
+  },
+  "non-strict optionalProperties - ok": {
+    "schema": {
+      "optionalProperties": { "foo": { "type": "string" } },
+      "additionalProperties": false
+    },
+    "instance": {
+      "foo": "foo"
+    },
+    "errors": []
+  },
+  "non-strict optionalProperties - bad wrong type": {
+    "schema": {
+      "optionalProperties": { "foo": { "type": "string" } },
+      "additionalProperties": false
+    },
+    "instance": {
+      "foo": 123
+    },
+    "errors": [
+      {
+        "instancePath": ["foo"],
+        "schemaPath": ["optionalProperties", "foo", "type"]
+      }
+    ]
+  },
+  "non-strict optionalProperties - ok missing property": {
+    "schema": {
+      "optionalProperties": { "foo": { "type": "string" } },
+      "additionalProperties": false
+    },
+    "instance": {},
+    "errors": []
+  },
+  "non-strict optionalProperties - ok additional property": {
+    "schema": {
+      "optionalProperties": { "foo": { "type": "string" } },
+      "additionalProperties": false
+    },
+    "instance": {
+      "foo": "foo",
+      "bar": "bar"
+    },
+    "errors": []
   }
 }
