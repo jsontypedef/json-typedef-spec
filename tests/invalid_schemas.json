@@ -6,17 +6,17 @@
   "string schema": "foo",
   "array schema": [],
   "illegal keyword": {
-    "foo": null
+    "foo": 123
   },
   "nullable not boolean": {
-    "nullable": null
+    "nullable": 123
   },
   "definitions not object": {
-    "definitions": null
+    "definitions": 123
   },
   "definition not object": {
     "definitions": {
-      "foo": null
+      "foo": 123
     }
   },
   "non-root definitions": {
@@ -27,7 +27,7 @@
     }
   },
   "ref not string": {
-    "ref": null
+    "ref": 123
   },
   "ref but no definitions": {
     "ref": "foo"
@@ -43,62 +43,62 @@
     }
   },
   "type not string": {
-    "type": null
+    "type": 123
   },
   "type not valid string value": {
     "type": "foo"
   },
   "enum not array": {
-    "enum": null
+    "enum": 123
   },
   "enum empty array": {
     "enum": []
   },
   "enum not array of strings": {
-    "enum": ["foo", null, "baz"]
+    "enum": ["foo", 123, "baz"]
   },
   "enum contains duplicates": {
     "enum": ["foo", "bar", "foo"]
   },
   "elements not object": {
-    "elements": null
+    "elements": 123
   },
   "elements not correct schema": {
     "elements": { "definitions": {} }
   },
   "properties not object": {
-    "properties": null
+    "properties": 123
   },
   "properties value not correct schema": {
     "properties": { "foo": { "definitions": {} } }
   },
   "optionalProperties not object": {
-    "optionalProperties": null
+    "optionalProperties": 123
   },
   "optionalProperties value not correct schema": {
     "optionalProperties": { "foo": { "definitions": {} } }
   },
   "additionalProperties not boolean": {
     "properties": {},
-    "additionalProperties": null
+    "additionalProperties": 123
   },
   "properties shares keys with optionalProperties": {
     "properties": { "foo": {}, "bar": {} },
     "optionalProperties": { "foo": {}, "baz": {} }
   },
   "values not object": {
-    "values": null
+    "values": 123
   },
   "values not correct schema": {
     "values": { "definitions": {} }
   },
   "discriminator not string": {
-    "discriminator": null,
+    "discriminator": 123,
     "mapping": {}
   },
   "mapping not object": {
     "discriminator": "foo",
-    "mapping": null
+    "mapping": 123
   },
   "mapping value not correct schema": {
     "discriminator": "foo",
