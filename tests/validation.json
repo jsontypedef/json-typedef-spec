@@ -2802,11 +2802,11 @@
         }
       }
     },
-    "instance": { "foo": "x", "a": "a" },
+    "instance": { "foo": "y", "a": "a" },
     "errors": [
       {
         "instancePath": ["a"],
-        "schemaPath": ["mapping", "x", "properties", "a", "type"]
+        "schemaPath": ["mapping", "y", "properties", "a", "type"]
       }
     ]
   },
