@@ -103,7 +103,7 @@
   "mapping value not correct schema": {
     "discriminator": "foo",
     "mapping": {
-      "x": { "properties": {}, "definitions":{ "x": {} }{} }
+      "x": { "properties": {}, "definitions": { "x": {} } }
     }
   },
   "mapping value not of properties form": {
