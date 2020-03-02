@@ -22,7 +22,7 @@
   "non-root definitions": {
     "definitions": {
       "foo": {
-        "definitions": {}
+        "definitions": { "x": {} }
       }
     }
   },
@@ -64,19 +64,19 @@
     "elements": 123
   },
   "elements not correct schema": {
-    "elements": { "definitions": {} }
+    "elements": { "definitions": { "x": {} } }
   },
   "properties not object": {
     "properties": 123
   },
   "properties value not correct schema": {
-    "properties": { "foo": { "definitions": {} } }
+    "properties": { "foo": { "definitions": { "x": {} } } }
   },
   "optionalProperties not object": {
     "optionalProperties": 123
   },
   "optionalProperties value not correct schema": {
-    "optionalProperties": { "foo": { "definitions": {} } }
+    "optionalProperties": { "foo": { "definitions": { "x": {} } } }
   },
   "additionalProperties not boolean": {
     "properties": {},
@@ -90,7 +90,7 @@
     "values": 123
   },
   "values not correct schema": {
-    "values": { "definitions": {} }
+    "values": { "definitions": { "x": {} } }
   },
   "discriminator not string": {
     "discriminator": 123,
@@ -103,7 +103,7 @@
   "mapping value not correct schema": {
     "discriminator": "foo",
     "mapping": {
-      "x": { "properties": {}, "definitions": {} }
+      "x": { "properties": {}, "definitions":{ "x": {} }{} }
     }
   },
   "mapping value not of properties form": {
