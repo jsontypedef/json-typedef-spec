@@ -1,0 +1,114 @@
+{
+  "null schema": null,
+  "boolean schema": true,
+  "integer schema": 1,
+  "float schema": 3.14,
+  "string schema": "foo",
+  "array schema": [],
+  "illegal keyword": {
+    "foo": null
+  },
+  "nullable not boolean": {
+    "nullable": null
+  },
+  "definitions not object": {
+    "definitions": null
+  },
+  "definition not object": {
+    "definition": {
+      "foo": null
+    }
+  },
+  "non-root definitions": {
+    "definitions": {
+      "foo": {
+        "definitions": {}
+      }
+    }
+  },
+  "ref not string": {
+    "ref": null
+  },
+  "type not string": {
+    "type": null
+  },
+  "type not valid string value": {
+    "type": "foo"
+  },
+  "enum not array": {
+    "enum": null
+  },
+  "enum empty array": {
+    "enum": []
+  },
+  "enum not array of strings": {
+    "enum": ["foo", null, "baz"]
+  },
+  "enum contains duplicates": {
+    "enum": ["foo", "bar", "foo"]
+  },
+  "elements not object": {
+    "elements": null
+  },
+  "elements not correct schema": {
+    "elements": { "definitions": {} }
+  },
+  "properties not object": {
+    "properties": null
+  },
+  "properties value not correct schema": {
+    "properties": { "foo": { "definitions": {} } }
+  },
+  "optionalProperties not object": {
+    "optionalProperties": null
+  },
+  "optionalProperties value not correct schema": {
+    "optionalProperties": { "foo": { "definitions": {} } }
+  },
+  "additionalProperties not boolean": {
+    "properties": {},
+    "additionalProperties": null
+  },
+  "properties shares keys with optionalProperties": {
+    "properties": { "foo": {}, "bar": {} },
+    "optionalProperties": { "foo": {}, "baz": {} }
+  },
+  "values not object": {
+    "values": null
+  },
+  "values not correct schema": {
+    "values": { "definitions": {} }
+  },
+  "discriminator not string": {
+    "discriminator": null,
+    "mapping": {}
+  },
+  "mapping not object": {
+    "discriminator": "foo",
+    "mapping": null
+  },
+  "mapping value not correct schema": {
+    "discriminator": "foo",
+    "mapping": {
+      "x": { "properties": {}, "definitions": {} }
+    }
+  },
+  "mapping value not of properties form": {
+    "discriminator": "foo",
+    "mapping": {
+      "x": {}
+    }
+  },
+  "discriminator shares keys with mapping properties": {
+    "discriminator": "foo",
+    "mapping": {
+      "x": { "properties": { "foo": {} } }
+    }
+  },
+  "discriminator shares keys with mapping optionalProperties": {
+    "discriminator": "foo",
+    "mapping": {
+      "x": { "optionalProperties": { "foo": {} } }
+    }
+  }
+}
