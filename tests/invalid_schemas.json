@@ -15,7 +15,7 @@
     "definitions": null
   },
   "definition not object": {
-    "definition": {
+    "definitions": {
       "foo": null
     }
   },
