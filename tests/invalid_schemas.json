@@ -29,6 +29,19 @@
   "ref not string": {
     "ref": null
   },
+  "ref but no definitions": {
+    "ref": "foo"
+  },
+  "ref to non-existent definition": {
+    "definitions": {},
+    "ref": "foo"
+  },
+  "sub-schema ref to non-existent definition": {
+    "definitions": {},
+    "elements": {
+      "ref": "foo"
+    }
+  },
   "type not string": {
     "type": null
   },
