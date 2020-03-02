@@ -110,5 +110,35 @@
     "mapping": {
       "x": { "optionalProperties": { "foo": {} } }
     }
-  }
+  },
+  "invalid form - ref and type": {
+    "definitions": { "foo": {} },
+    "ref": "foo",
+    "type": "uint32"
+  },
+  "invalid form - type and enum": { "type": "uint32", "enum": ["foo"] },
+  "invalid form - enum and elements": { "enum": ["foo"], "elements": {} },
+  "invalid form - elements and properties": {
+    "elements": {},
+    "properties": {}
+  },
+  "invalid form - elements and optionalProperties": {
+    "elements": {},
+    "optionalProperties": {}
+  },
+  "invalid form - elements and additionalProperties": {
+    "elements": {},
+    "additionalProperties": true
+  },
+  "invalid form - additionalProperties alone": {
+    "additionalProperties": true
+  },
+  "invalid form - properties and values": { "properties": {}, "values": {} },
+  "invalid form - values and discriminator": {
+    "values": {},
+    "discriminator": "foo",
+    "mapping": {}
+  },
+  "invalid form - discriminator alone": { "discriminator": "foo" },
+  "invalid form - mapping alone": { "mapping": {} }
 }
