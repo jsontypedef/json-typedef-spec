@@ -2728,5 +2728,105 @@
         "schemaPath": ["discriminator"]
       }
     ]
+  },
+  "discriminator schema - discriminator missing": {
+    "schema": {
+      "discriminator": "foo",
+      "mapping": {
+        "x": {
+          "properties": {
+            "a": { "type": "string" }
+          }
+        },
+        "y": {
+          "properties": {
+            "a": { "type": "float64" }
+          }
+        }
+      }
+    },
+    "instance": {},
+    "errors": [{ "instancePath": [], "schemaPath": ["discriminator"] }]
+  },
+  "discriminator schema - discriminator not string": {
+    "schema": {
+      "discriminator": "foo",
+      "mapping": {
+        "x": {
+          "properties": {
+            "a": { "type": "string" }
+          }
+        },
+        "y": {
+          "properties": {
+            "a": { "type": "float64" }
+          }
+        }
+      }
+    },
+    "instance": { "foo": null },
+    "errors": [{ "instancePath": ["foo"], "schemaPath": ["discriminator"] }]
+  },
+  "discriminator schema - discriminator not in mapping": {
+    "schema": {
+      "discriminator": "foo",
+      "mapping": {
+        "x": {
+          "properties": {
+            "a": { "type": "string" }
+          }
+        },
+        "y": {
+          "properties": {
+            "a": { "type": "float64" }
+          }
+        }
+      }
+    },
+    "instance": { "foo": "z" },
+    "errors": [{ "instancePath": ["foo"], "schemaPath": ["mapping"] }]
+  },
+  "discriminator schema - instance fails mapping schema": {
+    "schema": {
+      "discriminator": "foo",
+      "mapping": {
+        "x": {
+          "properties": {
+            "a": { "type": "string" }
+          }
+        },
+        "y": {
+          "properties": {
+            "a": { "type": "float64" }
+          }
+        }
+      }
+    },
+    "instance": { "foo": "x", "a": "a" },
+    "errors": [
+      {
+        "instancePath": ["a"],
+        "schemaPath": ["mapping", "x", "properties", "a", "type"]
+      }
+    ]
+  },
+  "discriminator schema - ok": {
+    "schema": {
+      "discriminator": "foo",
+      "mapping": {
+        "x": {
+          "properties": {
+            "a": { "type": "string" }
+          }
+        },
+        "y": {
+          "properties": {
+            "a": { "type": "float64" }
+          }
+        }
+      }
+    },
+    "instance": { "foo": "x", "a": "a" },
+    "errors": []
   }
 }
