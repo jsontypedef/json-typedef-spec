@@ -44,6 +44,11 @@
     "instance": {},
     "errors": []
   },
+  "empty schema with metadata - null": {
+    "schema": { "metadata": {} },
+    "instance": null,
+    "errors": []
+  },
   "ref schema - ref to empty definition": {
     "schema": {
       "definitions": {
