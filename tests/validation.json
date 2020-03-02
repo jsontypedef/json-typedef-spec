@@ -1726,6 +1726,146 @@
     "instance": "1937-01-01T12:00:27.87+00:20",
     "errors": []
   },
+  "enum schema - null": {
+    "schema": { "enum": ["foo", "bar", "baz"] },
+    "instance": null,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["enum"]
+      }
+    ]
+  },
+  "enum schema - boolean": {
+    "schema": { "enum": ["foo", "bar", "baz"] },
+    "instance": true,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["enum"]
+      }
+    ]
+  },
+  "enum schema - integer": {
+    "schema": { "enum": ["foo", "bar", "baz"] },
+    "instance": 1,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["enum"]
+      }
+    ]
+  },
+  "enum schema - float": {
+    "schema": { "enum": ["foo", "bar", "baz"] },
+    "instance": 3.14,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["enum"]
+      }
+    ]
+  },
+  "enum schema - string": {
+    "schema": { "enum": ["foo", "bar", "baz"] },
+    "instance": "foo",
+    "errors": []
+  },
+  "enum schema - array": {
+    "schema": { "enum": ["foo", "bar", "baz"] },
+    "instance": [],
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["enum"]
+      }
+    ]
+  },
+  "enum schema - object": {
+    "schema": { "enum": ["foo", "bar", "baz"] },
+    "instance": {},
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["enum"]
+      }
+    ]
+  },
+  "nullable enum schema - null": {
+    "schema": { "enum": ["foo", "bar", "baz"], "nullable": true },
+    "instance": null,
+    "errors": []
+  },
+  "nullable enum schema - boolean": {
+    "schema": { "enum": ["foo", "bar", "baz"], "nullable": true },
+    "instance": true,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["enum"]
+      }
+    ]
+  },
+  "nullable enum schema - integer": {
+    "schema": { "enum": ["foo", "bar", "baz"], "nullable": true },
+    "instance": 1,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["enum"]
+      }
+    ]
+  },
+  "nullable enum schema - float": {
+    "schema": { "enum": ["foo", "bar", "baz"], "nullable": true },
+    "instance": 3.14,
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["enum"]
+      }
+    ]
+  },
+  "nullable enum schema - string": {
+    "schema": { "enum": ["foo", "bar", "baz"], "nullable": true },
+    "instance": "foo",
+    "errors": []
+  },
+  "nullable enum schema - array": {
+    "schema": { "enum": ["foo", "bar", "baz"], "nullable": true },
+    "instance": [],
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["enum"]
+      }
+    ]
+  },
+  "nullable enum schema - object": {
+    "schema": { "enum": ["foo", "bar", "baz"], "nullable": true },
+    "instance": {},
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["enum"]
+      }
+    ]
+  },
+  "enum schema - value not in enum": {
+    "schema": { "enum": ["foo", "bar", "baz"], "nullable": true },
+    "instance": "quux",
+    "errors": [
+      {
+        "instancePath": [],
+        "schemaPath": ["enum"]
+      }
+    ]
+  },
+  "enum schema - ok": {
+    "schema": { "enum": ["foo", "bar", "baz"], "nullable": true },
+    "instance": "bar",
+    "errors": []
+  },
   "elements schema - null": {
     "schema": { "elements": { "type": "string" } },
     "instance": null,
