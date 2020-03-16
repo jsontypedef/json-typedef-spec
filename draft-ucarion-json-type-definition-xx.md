@@ -45,9 +45,9 @@ informative:
 This document proposes a format, called JSON Type Definition (JTD), for
 describing the shape of JavaScript Object Notation (JSON) messages. Its main
 goals are to enable code generation from schemas as well as portable validation
-with standardized error indicators. To this end, JTD is strategically limited to
+with standardized error indicators. To this end, JTD is intentionally limited to
 be no more expressive than the type systems of mainstream programming languages.
-This strategic limitation, as well as the decision to make JTD schemas be JSON
+This intentional limitation, as well as the decision to make JTD schemas be JSON
 documents, makes tooling atop of JTD easier to build.
 
 This document does not have IETF consensus and is presented here to facilitate
@@ -62,7 +62,7 @@ Definition (JTD).
 
 There exist many options for describing JSON data. JTD's niche is to focus on
 enabling code generation from schemas; to this end, JTD's expressiveness is
-strategically limited to be no more powerful than what can be expressed in the
+intentionally limited to be no more powerful than what can be expressed in the
 type systems of mainstream programming languages.
 
 The goals of JTD are to:
@@ -79,8 +79,7 @@ The goals of JTD are to:
   JTD a convenient format for tooling to accept as input, or produce as output.
 
 - Enable code generation from JTD schemas. JTD schemas are meant to be easy to
-  convert into data structures idiomatic to a given mainstream programming
-  language.
+  convert into data structures idiomatic to mainstream programming languages.
 
 - Provide a standardized format for error indicators when data does not conform
   with a schema.
@@ -1231,8 +1230,8 @@ indicator to produce is:
 ### Enum {#semantics-form-enum}
 
 The `enum` form is meant to describe instances whose value must be one of a
-finite, predetermined set of string values. The syntax of the `enum` form is
-described in {{syntax-form-enum}}.
+given set of string values. The syntax of the `enum` form is described in
+{{syntax-form-enum}}.
 
 If a schema is of the enum form, then:
 
