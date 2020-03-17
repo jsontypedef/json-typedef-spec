@@ -1,7 +1,7 @@
 ---
 title: JSON Type Definition
 docname: draft-ucarion-json-type-definition-00
-date: 2020-01-23
+date: 2020-03-16
 ipr: trust200902
 area: Applications
 wg: Independent Submission
@@ -76,7 +76,7 @@ The goals of JTD are to:
 
 - Provide a single format that is readable and editable by both humans and
   machines, and which can be embedded within other JSON documents. This makes
-  JTD a convenient format for tooling to accept as input, or produce as output.
+  JTD a convenient format for tooling to accept as input or produce as output.
 
 - Enable code generation from JTD schemas. JTD schemas are meant to be easy to
   convert into data structures idiomatic to mainstream programming languages.
@@ -163,7 +163,7 @@ being validated against a JTD schema.
 JTD is an experiment. Participation in this experiment consists of using JTD to
 validate or document interchanged JSON messages, or in building tooling atop of
 JTD. Feedback on the results of this experiment may be e-mailed to the author.
-Participants in this experiment are anticipated to mostly be nodes which provide
+Participants in this experiment are anticipated to mostly be nodes that provide
 or consume JSON-based APIs.
 
 Nodes know if they are participating in the experiment if they are validating
@@ -197,8 +197,8 @@ complex JSON formats, such as JTD schemas, this section uses CDDL to describe
 the format of JTD schemas.
 
 JTD schemas may recursively contain other schemas. In this document, a "root
-schema" is one which is not contained within another schema, i.e. it is "top
-level".
+schema" is one which is not contained within another schema, i.e. it is
+"top-level".
 
 A JTD schema is a JSON object taking on an appropriate form. JTD schemas may
 contain "additional data", discussed in {{extending-JTD-syntax}}. Root JTD
@@ -318,7 +318,7 @@ discriminator = {
 ~~~
 {: #cddl-schema title="CDDL definition of a schema"}
 
-The remainder of this section will describe contraints on JTD schemas which
+The remainder of this section will describe constraints on JTD schemas which
 cannot be expressed in CDDL, and will provide examples of valid and invalid JTD
 schemas.
 
@@ -326,7 +326,7 @@ schemas.
 
 The `root-schema` rule in {{cddl-schema}} permits for a member named
 `definitions`, but the `schema` rule does not permit for such a member. This
-means that only root (i.e., "top level") JTD schemas can have a `definitions`
+means that only root (i.e., "top-level") JTD schemas can have a `definitions`
 object, and sub-schemas may not.
 
 Thus
@@ -468,9 +468,9 @@ and
    { "type": "foo" }
 ~~~
 
-are not correct schemas, as neither `true` nor `"foo"` are in the list of
-permitted values of the `type` member described in the `type` CDDL rule in
-{{cddl-schema}}.
+are not correct schemas, as neither `true` nor the JSON string `foo` are in the
+list of permitted values of the `type` member described in the `type` CDDL rule
+in {{cddl-schema}}.
 
 ### Enum {#syntax-form-enum}
 
@@ -658,7 +658,7 @@ The `discriminator` form is defined by the `discriminator` CDDL rule in
 section provides constraints on the `discriminator` form beyond those in
 {{cddl-schema}}.
 
-To prevent ambiguous or unsatisfiable contstraints on the `discriminator`
+To prevent ambiguous or unsatisfiable constraints on the `discriminator`
 property of a tagged union, an additional constraint on schemas of the
 `discriminator` form exists. For schemas of the discriminator form:
 
@@ -751,11 +751,11 @@ result, if consistent validation with other parties is a requirement, users
 SHOULD NOT use metadata members to affect how schema validation, as described in
 {{semantics}}, works.
 
-Users MAY expect expect metadata members to be understood by other parties, and
-MAY use metadata members to affect how schema validation works, if these other
-parties are somehow known to support these metadata members. For example, two
-parties may agree, out of band, that they will support an extended JTD with a
-custom metadata member that affects validation.
+Users MAY expect metadata members to be understood by other parties, and MAY use
+metadata members to affect how schema validation works, if these other parties
+are somehow known to support these metadata members. For example, two parties
+may agree, out of band, that they will support an extended JTD with a custom
+metadata member that affects validation.
 
 # Semantics {#semantics}
 
@@ -911,7 +911,7 @@ If a schema is of the ref form, then:
   exists.
 - Let *R* be the value of the schema member with the name `ref`.
 - Let *S* be the value of the member of *D* whose name equals *R*. By
-  {{syntax}}, *S* exists, and is a schema.
+  {{syntax-form-ref}}, *S* exists, and is a schema.
 
 The schema accepts the instance if and only if *S* accepts the instance.
 Otherwise, the error indicators to return in this case are the union of the
@@ -1482,8 +1482,8 @@ If a schema is of the properties form, then:
 
 - If the instance is an object and the schema has a member named `properties`,
   then let *P* be the value of the schema member named `properties`. *P*, by
-  {{syntax}}, must be an object. For every member name in *P*, a member of the
-  same name in the instance must exist.
+  {{syntax-form-properties}}, must be an object. For every member name in *P*, a
+  member of the same name in the instance must exist.
 
   Otherwise, the error indicator for this case shall have an `instancePath`
   pointing to the instance, and a `schemaPath` pointing to the member of *P*
@@ -1494,9 +1494,10 @@ If a schema is of the properties form, then:
   named `optionalProperties` (if it exists).
 
   For every member *I* of the instance, find a member with the same name as
-  *I*'s in *P* or *O*. By {{syntax}}, it is not possible for both *P* and *O* to
-  have such a member. If the "discriminator tag exemption" is in effect on *I*
-  (see {{semantics-form-discriminator}}), then ignore *I*. Otherwise:
+  *I*'s in *P* or *O*. By {{syntax-form-properties}}, it is not possible for
+  both *P* and *O* to have such a member. If the "discriminator tag exemption"
+  is in effect on *I* (see {{semantics-form-discriminator}}), then ignore *I*.
+  Otherwise:
 
   - If no such member in *P* or *O* exists and validation is not in "allow
     additional properties" mode (see {{allow-additional-properties}}), then the
@@ -1609,7 +1610,8 @@ And the instance remained the same:
    { "b": 3, "c": 3, "e": 3 }
 ~~~
 
-Then the error indicators from evaluating the instance the schema would be
+Then the error indicators from evaluating the instance against the schema would
+be:
 
 ~~~ json
    [
@@ -1841,8 +1843,8 @@ are true:
   evaluating *S*'s value against the instance, with the "discriminator tag
   exemption" applied to *I*.
 
-Each of the list items above are defined to be mutually exclusive. For the same
-instance and schema, only one of the list items above will apply.
+The list items above are defined to be mutually exclusive. For the same instance
+and schema, only one of the list items above will apply.
 
 For example, the schema:
 
@@ -1957,12 +1959,12 @@ Finally, the schema accepts
    { "version": "v2", "a": "foo" }
 ~~~
 
-This instance is accepted despite the fact that `version` is not mentioned by
+This instance is accepted even though `version` is not mentioned by
 `/discriminator/mapping/v2/properties`; the "discriminator tag exemption"
 ensures that `version` is not treated as an additional property when evaluating
 the instance against *S*'s value.
 
-By contast, consider the same schema, but with `nullable` being `true`. The
+By contrast, consider the same schema, but with `nullable` being `true`. The
 schema:
 
 ~~~ json
@@ -2129,7 +2131,7 @@ implementations may be vulnerable to denial-of-service attacks.
 This appendix is not normative.
 
 This section describes possible features which are intentionally left out of
-JSON Data Definition Format, and justifies why these features are omitted.
+JSON Type Definition, and justifies why these features are omitted.
 
 ## Support for 64-bit Numbers {#other-considerations-int64}
 
@@ -2148,7 +2150,7 @@ loss of precision. But this assumption is likely to be incorrect, for the
 reasons given in Section 2.2 of {{RFC7493}}.
 
 `int64` and `uint64` likely would have led users to falsely assume that the full
-range of 64-bit integers can be interoperably procesed as JSON without loss of
+range of 64-bit integers can be interoperably processed as JSON without loss of
 precision. To avoid leading users astray, JTD omits `int64` and `uint64`.
 
 ## Support for Non-Root Definitions
