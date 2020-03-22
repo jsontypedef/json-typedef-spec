@@ -1,7 +1,7 @@
 ---
 title: JSON Type Definition
-docname: draft-ucarion-json-type-definition-00
-date: 2020-03-16
+docname: draft-ucarion-json-type-definition-01
+date: 2020-03-22
 ipr: trust200902
 area: Applications
 wg: Independent Submission
@@ -1800,9 +1800,8 @@ some examples.
 If a schema is of the "discriminator" form, then:
 
 - Let *D* be the schema member with the name `discriminator`.
-- Let *T* be the member of *D* with the name `tag`.
-- Let *M* be the member of *D* with the name `mapping`.
-- Let *I* be the instance member whose name equals *T*'s value. *I* may, for
+- Let *M* be the schema member with the name `mapping`.
+- Let *I* be the instance member whose name equals *D*'s value. *I* may, for
   some rejected instances, not exist.
 - Let *S* be the member of *M* whose name equals *I*'s value. *S* may, for some
   rejected instances, not exist.
@@ -1820,12 +1819,12 @@ are true:
 - If the instance is a JSON object, then *I* must exist.
 
   Otherwise, the error indicator for this case shall have an `instancePath`
-  pointing to the instance, and a `schemaPath` pointing to *T*.
+  pointing to the instance, and a `schemaPath` pointing to *D*.
 
 - If the instance is a JSON object and *I* exists, *I*'s value must be a string.
 
   Otherwise, the error indicator for this case shall have an `instancePath`
-  pointing to *I*, and a `schemaPath` pointing to *T*.
+  pointing to *I*, and a `schemaPath` pointing to *D*.
 
 - If the instance is a JSON object and *I* exists and has a string value, then
   *S* must exist.
@@ -1834,8 +1833,8 @@ are true:
   pointing to *I*, and a `schemaPath` pointing to *M*.
 
 - If the instance is a JSON object, *I* exists, and *S* exists, then the
-  instance must satisfy *S*'s value. By {{syntax}}, *S*'s value must have the
-  properties form. Apply the "discriminator tag exemption" afforded in
+  instance must satisfy *S*'s value. By {{syntax}}, *S*'s value must be a schema
+  of the properties form. Apply the "discriminator tag exemption" afforded in
   {{semantics-form-props}} to *I* when evaluating whether the instance satisfies
   *S*'s value.
 
@@ -1843,8 +1842,8 @@ are true:
   evaluating *S*'s value against the instance, with the "discriminator tag
   exemption" applied to *I*.
 
-The list items above are defined to be mutually exclusive. For the same instance
-and schema, only one of the list items above will apply.
+The list items above are defined in a mutually exclusive way. For any given
+instance and schema, exactly one of the list items above will apply.
 
 For example, the schema:
 
@@ -1889,7 +1888,7 @@ Also rejected is
 with the error indicator
 
 ~~~ json
-   [{ "instancePath": "", "schemaPath": "/discriminator/tag" }]
+   [{ "instancePath": "", "schemaPath": "/discriminator" }]
 ~~~
 
 (This is the case of *I* not existing.)
@@ -1906,7 +1905,7 @@ with the error indicator
    [
      {
        "instancePath": "/version",
-       "schemaPath": "/discriminator/tag"
+       "schemaPath": "/discriminator"
      }
    ]
 ~~~
@@ -1925,7 +1924,7 @@ with the error indicator
    [
      {
        "instancePath": "/version",
-       "schemaPath": "/discriminator/mapping"
+       "schemaPath": "/mapping"
      }
    ]
 ~~~
@@ -1945,7 +1944,7 @@ with the error indicator
    [
      {
        "instancePath": "/a",
-       "schemaPath": "/discriminator/mapping/v2/properties/a/type"
+       "schemaPath": "/mapping/v2/properties/a/type"
      }
    ]
 ~~~
@@ -1960,9 +1959,9 @@ Finally, the schema accepts
 ~~~
 
 This instance is accepted even though `version` is not mentioned by
-`/discriminator/mapping/v2/properties`; the "discriminator tag exemption"
-ensures that `version` is not treated as an additional property when evaluating
-the instance against *S*'s value.
+`/mapping/v2/properties`; the "discriminator tag exemption" ensures that
+`version` is not treated as an additional property when evaluating the instance
+against *S*'s value.
 
 By contrast, consider the same schema, but with `nullable` being `true`. The
 schema:
@@ -2053,7 +2052,7 @@ but rejects
 with the error indicator
 
 ~~~ json
-   [{ "instancePath": "", "schemaPath": "/discriminator/tag" }]
+   [{ "instancePath": "", "schemaPath": "/discriminator" }]
 ~~~
 
 and rejects
@@ -2068,7 +2067,7 @@ with the error indicator
    [
      {
        "instancePath": "/event_type",
-       "schemaPath": "/discriminator/mapping"
+       "schemaPath": "/mapping"
      }
    ]
 ~~~
@@ -2084,8 +2083,7 @@ with the error indicator
 ~~~ json
    [{
      "instancePath": "",
-     "schemaPath":
-       "/discriminator/mapping/account_deleted/properties/account_id"
+     "schemaPath": "/mapping/account_deleted/properties/account_id"
    }]
 ~~~
 
@@ -2105,8 +2103,7 @@ with the error indicator
 ~~~ json
    [{
      "instancePath": "/xxx",
-     "schemaPath":
-       "/discriminator/mapping/account_payment_plan_changed"
+     "schemaPath": "/mapping/account_payment_plan_changed"
    }]
 ~~~
 
