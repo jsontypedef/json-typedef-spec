@@ -22,7 +22,9 @@
   "non-root definitions": {
     "definitions": {
       "foo": {
-        "definitions": { "x": {} }
+        "definitions": {
+          "x": {}
+        }
       }
     }
   },
@@ -55,42 +57,76 @@
     "enum": []
   },
   "enum not array of strings": {
-    "enum": ["foo", 123, "baz"]
+    "enum": [
+      "foo",
+      123,
+      "baz"
+    ]
   },
   "enum contains duplicates": {
-    "enum": ["foo", "bar", "foo"]
+    "enum": [
+      "foo",
+      "bar",
+      "foo"
+    ]
   },
   "elements not object": {
     "elements": 123
   },
   "elements not correct schema": {
-    "elements": { "definitions": { "x": {} } }
+    "elements": {
+      "definitions": {
+        "x": {}
+      }
+    }
   },
   "properties not object": {
     "properties": 123
   },
   "properties value not correct schema": {
-    "properties": { "foo": { "definitions": { "x": {} } } }
+    "properties": {
+      "foo": {
+        "definitions": {
+          "x": {}
+        }
+      }
+    }
   },
   "optionalProperties not object": {
     "optionalProperties": 123
   },
   "optionalProperties value not correct schema": {
-    "optionalProperties": { "foo": { "definitions": { "x": {} } } }
+    "optionalProperties": {
+      "foo": {
+        "definitions": {
+          "x": {}
+        }
+      }
+    }
   },
   "additionalProperties not boolean": {
     "properties": {},
     "additionalProperties": 123
   },
   "properties shares keys with optionalProperties": {
-    "properties": { "foo": {}, "bar": {} },
-    "optionalProperties": { "foo": {}, "baz": {} }
+    "properties": {
+      "foo": {},
+      "bar": {}
+    },
+    "optionalProperties": {
+      "foo": {},
+      "baz": {}
+    }
   },
   "values not object": {
     "values": 123
   },
   "values not correct schema": {
-    "values": { "definitions": { "x": {} } }
+    "values": {
+      "definitions": {
+        "x": {}
+      }
+    }
   },
   "discriminator not string": {
     "discriminator": 123,
@@ -103,7 +139,12 @@
   "mapping value not correct schema": {
     "discriminator": "foo",
     "mapping": {
-      "x": { "properties": {}, "definitions": { "x": {} } }
+      "x": {
+        "properties": {},
+        "definitions": {
+          "x": {}
+        }
+      }
     }
   },
   "mapping value not of properties form": {
@@ -112,25 +153,56 @@
       "x": {}
     }
   },
+  "mapping value has nullable set to true": {
+    "discriminator": "foo",
+    "mapping": {
+      "x": {
+        "nullable": true,
+        "properties": {
+          "foo": {}
+        }
+      }
+    }
+  },
   "discriminator shares keys with mapping properties": {
     "discriminator": "foo",
     "mapping": {
-      "x": { "properties": { "foo": {} } }
+      "x": {
+        "properties": {
+          "foo": {}
+        }
+      }
     }
   },
   "discriminator shares keys with mapping optionalProperties": {
     "discriminator": "foo",
     "mapping": {
-      "x": { "optionalProperties": { "foo": {} } }
+      "x": {
+        "optionalProperties": {
+          "foo": {}
+        }
+      }
     }
   },
   "invalid form - ref and type": {
-    "definitions": { "foo": {} },
+    "definitions": {
+      "foo": {}
+    },
     "ref": "foo",
     "type": "uint32"
   },
-  "invalid form - type and enum": { "type": "uint32", "enum": ["foo"] },
-  "invalid form - enum and elements": { "enum": ["foo"], "elements": {} },
+  "invalid form - type and enum": {
+    "type": "uint32",
+    "enum": [
+      "foo"
+    ]
+  },
+  "invalid form - enum and elements": {
+    "enum": [
+      "foo"
+    ],
+    "elements": {}
+  },
   "invalid form - elements and properties": {
     "elements": {},
     "properties": {}
@@ -146,12 +218,19 @@
   "invalid form - additionalProperties alone": {
     "additionalProperties": true
   },
-  "invalid form - properties and values": { "properties": {}, "values": {} },
+  "invalid form - properties and values": {
+    "properties": {},
+    "values": {}
+  },
   "invalid form - values and discriminator": {
     "values": {},
     "discriminator": "foo",
     "mapping": {}
   },
-  "invalid form - discriminator alone": { "discriminator": "foo" },
-  "invalid form - mapping alone": { "mapping": {} }
+  "invalid form - discriminator alone": {
+    "discriminator": "foo"
+  },
+  "invalid form - mapping alone": {
+    "mapping": {}
+  }
 }
