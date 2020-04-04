@@ -159,7 +159,7 @@
       "x": {
         "nullable": true,
         "properties": {
-          "foo": {}
+          "bar": {}
         }
       }
     }
