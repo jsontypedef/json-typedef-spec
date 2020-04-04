@@ -666,11 +666,40 @@ property of a tagged union, an additional constraint on schemas of the
 - Let *M* be the member of the schema with the name `mapping`.
 
 If the schema is correct, then all member values *S* of *M* will be schemas of
-the "properties" form. For each member *P* of *S* whose name equals `properties`
-or `optionalProperties`, *P*'s value, which must be an object, MUST NOT contain
-any members whose name equals *D*'s value.
+the "properties" form. For each *S*:
+
+- If *S* has a member *N* whose name equals `nullable`, *N*'s value MUST NOT be
+  the JSON primitive value `true`.
+- For each member *P* of *S* whose name equals `properties` or
+  `optionalProperties`, *P*'s value, which must be an object, MUST NOT contain
+  any members whose name equals *D*'s value.
 
 Thus
+
+~~~ json
+   {
+     "discriminator": "event_type",
+     "mapping": {
+       "can_the_object_be_null_or_not?": {
+         "nullable": true,
+         "properties": { "foo": { "type": "string" } }}
+       }
+     }
+   }
+~~~
+
+is an incorrect schema, as a member of `mapping` has a member named `nullable`
+whose value is `true`. This suggests that the instance may be null, but the
+top-level schema lacks such a `nullable` set to `true`, suggesting that the
+instance cannot be null.
+
+JTD handles such possible ambiguity by disallowing, at the syntactic level, the
+possibility of contradictory specifications of whether an instance described by
+a schema of the `discriminator` form may be null. The schemas in a discriminator
+`mapping` cannot have `nullable` set to `true`: only the discriminator itself
+can use `nullable` in this way.
+
+It also follows that
 
 ~~~ json
    {
