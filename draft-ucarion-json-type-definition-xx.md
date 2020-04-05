@@ -689,14 +689,15 @@ Thus
 ~~~
 
 is an incorrect schema, as a member of `mapping` has a member named `nullable`
-whose value is `true`. This suggests that the instance may be null, but the
-top-level schema lacks such a `nullable` set to `true`, suggesting that the
-instance cannot be null.
+whose value is `true`. This would suggest that the instance may be null. Yet the
+top-level schema lacks such a `nullable` set to `true`, which would suggest that
+the instance in fact cannot be null. If this were a correct JTD schema, it would
+be unclear which piece of information takes "precedence".
 
 JTD handles such possible ambiguity by disallowing, at the syntactic level, the
 possibility of contradictory specifications of whether an instance described by
 a schema of the `discriminator` form may be null. The schemas in a discriminator
-`mapping` cannot have `nullable` set to `true`: only the discriminator itself
+`mapping` cannot have `nullable` set to `true`; only the discriminator itself
 can use `nullable` in this way.
 
 It also follows that
