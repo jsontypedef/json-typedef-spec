@@ -1,0 +1,108 @@
+; root-schema is identical to schema, but additionally allows for
+; definitions.
+;
+; definitions are prohibited from appearing on non-root schemas.
+root-schema = {
+  ? definitions: { * tstr => { schema}},
+  schema,
+}
+
+; schema is the main CDDL rule defining a JTD schema.
+;
+; All JTD schemas are JSON objects taking on one of eight forms
+; listed here.
+schema = (
+  ref //
+  type //
+  enum //
+  elements //
+  properties //
+  values //
+  discriminator //
+  empty //
+)
+
+; shared is a CDDL rule containing properties that all eight schema
+; forms share.
+shared = (
+  ? metadata: { * tstr => any },
+  ? nullable: bool,
+)
+
+; empty describes the "empty" schema form.
+empty = shared
+
+; ref describes the "ref" schema form.
+;
+; There are additional constraints on this form that cannot be
+; expressed in CDDL. Section 2.2.2 describes these additional
+; constraints in detail.
+ref = ( ref: tstr, shared )
+
+; type describes the "type" schema form.
+type = (
+  type: "boolean"
+    / "float32"
+    / "float64"
+    / "int8"
+    / "uint8"
+    / "int16"
+    / "uint16"
+    / "int32"
+    / "uint32"
+    / "string"
+    / "timestamp",
+  shared,
+)
+
+; enum describes the "enum" schema form.
+;
+; There are additional constraints on this form that cannot be
+; expressed in CDDL. Section 2.2.4 describes these additional
+; constraints in detail.
+enum = ( enum: [+ tstr], shared )
+
+; elements describes the "elements" schema form.
+elements = ( elements: { schema }, shared )
+
+; properties describes the "properties" schema form.
+;
+; This CDDL rule is defined so that a schema of the "properties" form
+; may omit a member named "properties" or a member named
+; "optionalProperties", but not both.
+;
+; There are additional constraints on this form that cannot be
+; expressed in CDDL. Section 2.2.6 describes these additional
+; constraints in detail.
+properties = (with-properties // with-optional-properties)
+
+with-properties = (
+  properties: { * tstr => { schema }},
+  ? optionalProperties: { * tstr => { schema }},
+  ? additionalProperties: bool,
+  shared,
+)
+
+with-optional-properties = (
+  ? properties: { * tstr => { schema }},
+  optionalProperties: { * tstr => { schema }},
+  ? additionalProperties: bool,
+  shared,
+)
+
+; values describes the "values" schema form.
+values = ( values: { schema }, shared )
+
+; discriminator describes the "discriminator" schema form.
+;
+; There are additional constraints on this form that cannot be
+; expressed in CDDL. Section 2.2.8 describes these additional
+; constraints in detail.
+discriminator = (
+  discriminator: tstr,
+
+  ; Note well: this rule is defined in terms of the "properties"
+  ; CDDL rule, not the "schema" CDDL rule.
+  mapping: { * tstr => { properties } }
+  shared,
+)
