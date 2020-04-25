@@ -214,43 +214,44 @@ described in this section.
 ;
 ; definitions are prohibited from appearing on non-root schemas.
 root-schema = {
+  ? definitions: { * tstr => { schema}},
   schema,
-  ? definitions: { * tstr => schema },
 }
 
 ; schema is the main CDDL rule defining a JTD schema.
 ;
 ; All JTD schemas are JSON objects taking on one of eight forms
 ; listed here.
-schema = empty /
-  ref /
-  type /
-  enum /
-  elements /
-  properties /
-  values /
-  discriminator
+schema = (
+  ref //
+  type //
+  enum //
+  elements //
+  properties //
+  values //
+  discriminator //
+  empty //
+)
 
 ; shared is a CDDL rule containing properties that all eight schema
 ; forms share.
-shared = {
+shared = (
+  ? metadata: { * tstr => any },
   ? nullable: bool,
-  ? metadata: { * tstr => * },
-}
+)
 
 ; empty describes the "empty" schema form.
-empty = { shared }
+empty = shared
 
 ; ref describes the "ref" schema form.
 ;
 ; There are additional constraints on this form that cannot be
 ; expressed in CDDL. Section 2.2.2 describes these additional
 ; constraints in detail.
-ref = { shared, ref: tstr }
+ref = ( ref: tstr, shared )
 
 ; type describes the "type" schema form.
-type = {
-  shared,
+type = (
   type: "boolean"
     / "float32"
     / "float64"
@@ -261,18 +262,19 @@ type = {
     / "int32"
     / "uint32"
     / "string"
-    / "timestamp"
-}
+    / "timestamp",
+  shared,
+)
 
 ; enum describes the "enum" schema form.
 ;
 ; There are additional constraints on this form that cannot be
 ; expressed in CDDL. Section 2.2.4 describes these additional
 ; constraints in detail.
-enum = { shared, enum: [+ tstr] }
+enum = ( enum: [+ tstr], shared )
 
 ; elements describes the "elements" schema form.
-elements = { shared, elements: schema }
+elements = ( elements: { schema }, shared )
 
 ; properties describes the "properties" schema form.
 ;
@@ -283,39 +285,38 @@ elements = { shared, elements: schema }
 ; There are additional constraints on this form that cannot be
 ; expressed in CDDL. Section 2.2.6 describes these additional
 ; constraints in detail.
-properties = with-properties / with-optional-properties
+properties = (with-properties // with-optional-properties)
 
-with-properties = {
-  shared,
-  properties: { * tstr => schema },
-  ? optionalProperties: { * tstr => schema },
+with-properties = (
+  properties: { * tstr => { schema }},
+  ? optionalProperties: { * tstr => { schema }},
   ? additionalProperties: bool,
-}
+  shared,
+)
 
-with-optional-properties = {
-  shared,
-  ? properties: { * tstr => schema },
-  optionalProperties: { * tstr => schema },
+with-optional-properties = (
+  ? properties: { * tstr => { schema }},
+  optionalProperties: { * tstr => { schema }},
   ? additionalProperties: bool,
-}
+  shared,
+)
 
 ; values describes the "values" schema form.
-values = { shared, values: schema }
+values = ( values: { schema }, shared )
 
 ; discriminator describes the "discriminator" schema form.
 ;
 ; There are additional constraints on this form that cannot be
 ; expressed in CDDL. Section 2.2.8 describes these additional
 ; constraints in detail.
-discriminator = {
-  shared,
+discriminator = (
   discriminator: tstr,
 
   ; Note well: this rule is defined in terms of the "properties"
   ; CDDL rule, not the "schema" CDDL rule.
-  mapping: { * tstr => properties }
-}
-~~~
+  mapping: { * tstr => { properties } }
+  shared,
+)
 {: #cddl-schema title="CDDL definition of a schema"}
 
 The remainder of this section will describe constraints on JTD schemas which
