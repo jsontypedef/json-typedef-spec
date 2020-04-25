@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# This script verifies that all of the schemas in test/validateion.json are
+# valid against the CDDL rules in jtd.cddl.
+#
+# It's expected that whenever we want to make updates to the CDDL rules in the
+# specification language, we also update jtd.cddl to ensure that the test suite
+# is in agreement with the specification.
+
 set -e
 
 for s in $(jq -c 'values[] | .schema' tests/validation.json | sort | uniq); do
