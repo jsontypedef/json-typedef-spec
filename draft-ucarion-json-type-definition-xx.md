@@ -26,6 +26,7 @@ author:
 
 normative:
   RFC3339:
+  RFC4287:
   RFC6901:
   RFC8259:
   RFC8610:
@@ -317,6 +318,7 @@ discriminator = (
   mapping: { * tstr => { properties } }
   shared,
 )
+~~~
 {: #cddl-schema title="CDDL definition of a schema"}
 
 The remainder of this section will describe constraints on JTD schemas which
@@ -795,9 +797,8 @@ and the error indicators to produce when an instance is invalid.
 
 ## Allowing Additional Properties {#allow-additional-properties}
 
-Users will have different desired behavior with respect to "unspcecified"
-members in an instance. For example, consider the JTD schema in
-{{JTD-properties-a}}:
+Users will have different desired behavior with respect to "unspecified" members
+in an instance. For example, consider the JTD schema in {{JTD-properties-a}}:
 
 ~~~ json
 { "properties": { "a": { "type": "string" }}}
@@ -1043,7 +1044,7 @@ If a schema is of the type form, then:
 | int32     | See {{int-ranges}}                                     |
 | uint32    | See {{int-ranges}}                                     |
 | string    | a JSON string                                          |
-| timestamp | a JSON string encoding a {{RFC3339}} timestamp         |
+| timestamp | a JSON string that follows the standard format described in {{RFC3339}}, as refined by Section 3.3 of {{RFC4287}} |
 |---------------------+----------------------------------------------|
 {: #type-values title="Accepted Values for Type"}
 
@@ -2154,7 +2155,7 @@ implementations may be vulnerable to denial-of-service attacks.
 
 --- back
 
-# Other Considerations {#other-considerations}
+# Rationale for Omitted Features {#other-considerations}
 
 This appendix is not normative.
 
@@ -2427,7 +2428,7 @@ accepts the same instances as the CDDL rule:
    root = { a: "foo", b: number } / { a: "bar", b: tstr }
 ~~~
 
-# Examples {#examples}
+# Example {#examples}
 
 This appendix is not normative.
 
