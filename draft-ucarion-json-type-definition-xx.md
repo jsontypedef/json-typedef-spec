@@ -86,11 +86,11 @@ The goals of JTD are to:
   with a schema.
 
 JTD is intentionally designed as a rather minimal schema language. Thus,
-although JTD can describe JSON, it is not able to describe its own structure:
-this document uses Concise Data Definition Language (CDDL) {{RFC8610}} to
-describe JTD's syntax. By keeping the expressiveness of the schema language
-minimal, JTD makes code generation and standardized error indicators easier to
-implement.
+although JTD can describe some categories of JSON, it is not able to describe
+its own structure: this document uses Concise Data Definition Language (CDDL)
+{{RFC8610}} to describe JTD's syntax. By keeping the expressiveness of the
+schema language minimal, JTD makes code generation and standardized error
+indicators easier to implement.
 
 Examples in this document use constructs from the C++ programming language.
 These examples are provided to aid the reader in understanding the principles of
@@ -125,7 +125,7 @@ inconsistent ways. {{other-considerations-int64}} further elaborates on why JTD
 does not support 64-bit integers.
 
 The principle of clear correspondence to common programming languages is why JTD
-does not support, for example, a data type for numbers up to 2**53-1.
+does not support, for example, a data type for integers up to 2**53-1.
 
 It is expected that for many use-cases, a schema language of JTD's
 expressiveness is sufficient. Where a more expressive language is required,
@@ -148,7 +148,7 @@ equivalents.
 
 ## Terminology
 
-{::boilerplate bcp14+}
+{::boilerplate bcp14}
 
 The term "JSON Pointer", when it appears in this document, is to be understood
 as it is defined in {{RFC6901}}.
@@ -157,7 +157,8 @@ The terms "object", "member", "array", "number", "name", and "string" in this
 document are to be interpreted as described in {{RFC8259}}.
 
 The term "instance", when it appears in this document, refers to a JSON value
-being validated against a JTD schema.
+being validated against a JTD schema. This value can be an entire JSON document,
+or it can be a value embedded within a JSON document.
 
 ## Scope of Experiment
 
@@ -780,8 +781,8 @@ to code generators, or trigger some special behavior for a library that
 generates user interfaces from schemas.
 
 Users SHOULD NOT expect metadata members to be understood by other parties. As a
-result, if consistent validation with other parties is a requirement, users
-SHOULD NOT use metadata members to affect how schema validation, as described in
+result, if consistent validation with other parties is a requirement, users MUST
+NOT use metadata members to affect how schema validation, as described in
 {{semantics}}, works.
 
 Users MAY expect metadata members to be understood by other parties, and MAY use
