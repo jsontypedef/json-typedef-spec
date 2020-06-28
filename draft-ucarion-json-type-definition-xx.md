@@ -1,7 +1,7 @@
 ---
 title: JSON Type Definition
 docname: draft-ucarion-json-type-definition-04
-date: 2020-04-26
+date: 2020-06-28
 ipr: trust200902
 area: Applications
 wg: Independent Submission
