@@ -1,6 +1,6 @@
 ---
 title: JSON Type Definition
-docname: draft-ucarion-json-type-definition-03
+docname: draft-ucarion-json-type-definition-04
 date: 2020-04-26
 ipr: trust200902
 area: Applications
