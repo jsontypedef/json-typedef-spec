@@ -1032,8 +1032,9 @@ If a schema is of the type form, then:
 - Let *T* be the value of the member with the name `type`. The following table
   describes whether the instance is accepted, as a function of *T*'s value:
 
+~~~ascii
 |---------------------+----------------------------------------------|
-| If \_T\_ equals ...  | then the instance is accepted if it is ...  |
+| If \_T\_ equals ... | then the instance is accepted if it is ...   |
 |---------------------+----------------------------------------------|
 | boolean   | equal to `true` or `false`                             |
 | float32   | a JSON number                                          |
@@ -1045,8 +1046,11 @@ If a schema is of the type form, then:
 | int32     | See {{int-ranges}}                                     |
 | uint32    | See {{int-ranges}}                                     |
 | string    | a JSON string                                          |
-| timestamp | a JSON string that follows the standard format described in {{RFC3339}}, as refined by Section 3.3 of {{RFC4287}} |
+| timestamp | a JSON string that follows the standard format         |
+|           | described in {{RFC3339}}, as refined by Section 3.3 of |
+|           | {{RFC4287}}                                            |
 |---------------------+----------------------------------------------|
+~~~
 {: #type-values title="Accepted Values for Type"}
 
 `float32` and `float64` are distinguished from each other in their intent.
@@ -1061,6 +1065,7 @@ it is a JSON number encoding a value with zero fractional part. Depending on the
 value of _T_, this encoded number must additionally fall within a particular
 range:
 
+~~~ascii
 |--------+----------------------------+----------------------------|
 | \_T\_  | Minimum Value (Inclusive)  | Maximum Value (Inclusive)  |
 |--------+----------------------------+----------------------------|
@@ -1071,6 +1076,7 @@ range:
 | int32  | -2,147,483,648             | 2,147,483,647              |
 | uint32 | 0                          | 4,294,967,295              |
 |--------+----------------------------+----------------------------|
+~~~
 {: #int-ranges title="Ranges for Integer Types"}
 
 Note that
