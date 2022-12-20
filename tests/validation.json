@@ -3760,6 +3760,30 @@
     },
     "errors": []
   },
+  "strict optionalProperties - ok missing first optionalProperty": {
+      "schema": {
+        "optionalProperties": {
+          "foo": {"type": "string"},
+          "bar": {"type": "string"}
+        }
+      },
+      "instance": {
+        "bar": "bar"
+      },
+      "errors": []
+  },
+  "non-strict optionalProperties - ok no optionalProperty":{
+      "schema": {
+        "optionalProperties": {
+          "foo": {"type": "string"}
+        },
+        "additionalProperties": true
+      },
+      "instance": {
+        "bar": "bar"
+      },
+      "errors": []
+  },
   "strict optionalProperties - bad wrong type": {
     "schema": {
       "optionalProperties": {
